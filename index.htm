@@ -1045,7 +1045,7 @@ request7.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?od
 request7.responseType = "text";
 
 request7.onload = () => {
-  if (request6.readyState === request7.DONE) {
+  if (request7.readyState === request7.DONE) {
     if (request7.status === 200) {
 var data0 = request7.responseText;
 var data0 = request7.responseText.replaceAll("dc:","dc");
@@ -1081,6 +1081,441 @@ var calendar = '"odpt.Calendar:Weekday"';
 				var keito1 = '&nbsp;'+"若"
 		var keito2 = "02"
 		var noriba = "６"
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",sessionStorage.getItem("kgbs10"));
+				sessionStorage.setItem("kgbs20-1",sessionStorage.getItem("kgbs10-1"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs23",sessionStorage.getItem("kgbs13"));
+				sessionStorage.setItem("kgbs10",keito2);
+				sessionStorage.setItem("kgbs10-1",keito1);
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				sessionStorage.setItem("kgbs13",noriba);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",keito2);
+				sessionStorage.setItem("kgbs20-1",keito1);
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				sessionStorage.setItem("kgbs23",noriba);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",keito2);
+				sessionStorage.setItem("kgbs30-1",keito1);
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				sessionStorage.setItem("kgbs33",noriba);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",keito2);
+				sessionStorage.setItem("kgbs40-1",keito1);
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				sessionStorage.setItem("kgbs43",noriba);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",keito2);
+				sessionStorage.setItem("kgbs50-1",keito1);
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				sessionStorage.setItem("kgbs53",noriba);
+				}
+
+
+
+			}
+		}
+	}
+}
+var request8 = new XMLHttpRequest();
+//川越08
+request8.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=川越０８&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request8.responseType = "text";
+
+request8.onload = () => {
+  if (request8.readyState === request8.DONE) {
+    if (request8.status === 200) {
+var data0 = request8.responseText;
+var data0 = request8.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:07"' ){
+			if ( hatsu.replace(":","") >= ima ){
+				console.log(JSON.stringify(data[n].odptnote).substring(0,15) )
+
+
+		var ikisaki = "宮下町循環"
+		var keiyu = "　　　（氷川神社経由）"
+
+				var keito1 = "川越"
+		var keito2 = "08"
+		var noriba = "７"
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",sessionStorage.getItem("kgbs10"));
+				sessionStorage.setItem("kgbs20-1",sessionStorage.getItem("kgbs10-1"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs23",sessionStorage.getItem("kgbs13"));
+				sessionStorage.setItem("kgbs10",keito2);
+				sessionStorage.setItem("kgbs10-1",keito1);
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				sessionStorage.setItem("kgbs13",noriba);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",keito2);
+				sessionStorage.setItem("kgbs20-1",keito1);
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				sessionStorage.setItem("kgbs23",noriba);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",keito2);
+				sessionStorage.setItem("kgbs30-1",keito1);
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				sessionStorage.setItem("kgbs33",noriba);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",keito2);
+				sessionStorage.setItem("kgbs40-1",keito1);
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				sessionStorage.setItem("kgbs43",noriba);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",keito2);
+				sessionStorage.setItem("kgbs50-1",keito1);
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				sessionStorage.setItem("kgbs53",noriba);
+				}
+
+
+
+			}
+		}
+	}
+}
+var request9 = new XMLHttpRequest();
+//川越09
+request9.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=川越０９&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request9.responseType = "text";
+
+request9.onload = () => {
+  if (request9.readyState === request9.DONE) {
+    if (request9.status === 200) {
+var data0 = request9.responseText;
+var data0 = request9.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:06"' ){
+			if ( hatsu.replace(":","") >= ima ){
+				console.log(JSON.stringify(data[n].odptnote).substring(0,15) )
+
+
+		var ikisaki = "パイオニア"
+		var keiyu = "　　　　　　（蔵のまち経由）"
+
+				var keito1 = "川越"
+		var keito2 = "09"
+		var noriba = "６"
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",sessionStorage.getItem("kgbs10"));
+				sessionStorage.setItem("kgbs20-1",sessionStorage.getItem("kgbs10-1"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs23",sessionStorage.getItem("kgbs13"));
+				sessionStorage.setItem("kgbs10",keito2);
+				sessionStorage.setItem("kgbs10-1",keito1);
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				sessionStorage.setItem("kgbs13",noriba);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",keito2);
+				sessionStorage.setItem("kgbs20-1",keito1);
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				sessionStorage.setItem("kgbs23",noriba);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",keito2);
+				sessionStorage.setItem("kgbs30-1",keito1);
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				sessionStorage.setItem("kgbs33",noriba);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",keito2);
+				sessionStorage.setItem("kgbs40-1",keito1);
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				sessionStorage.setItem("kgbs43",noriba);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",keito2);
+				sessionStorage.setItem("kgbs50-1",keito1);
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				sessionStorage.setItem("kgbs53",noriba);
+				}
+
+
+
+			}
+		}
+	}
+}
+var request10 = new XMLHttpRequest();
+//川越09
+request10.open("GET", "https://api.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:SeibuBus&dc:title=%E6%9C%AC%EF%BC%95%EF%BC%92&acl:consumerKey=qkpjriztbhvaxwjzum1oluug1hnfvwfq3ztxnsb56xtbt6qve7zdwv8bb73ajavy", true);
+request10.responseType = "text";
+
+request10.onload = () => {
+  if (request10.readyState === request10.DONE) {
+    if (request10.status === 200) {
+var data0 = request10.responseText;
+var data0 = request10.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Specific.SeibuBus.13.Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[2].odptnote) == '"川越駅東口:130007:1"' ){
+			if ( hatsu.replace(":","") >= ima ){
+				console.log(JSON.stringify(data[n].odptnote).substring(0,15) )
+
+
+		var ikisaki = "川越グリーンパーク"
+		var keiyu = "　　　　　　　　　　　　　（警察署経由）"
+
+				var keito1 = '&nbsp;'+"本"
+		var keito2 = "52"
+		var noriba = "８"
 
 				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
 				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
@@ -1237,13 +1672,18 @@ if( sessionStorage.getItem("kgbs51-1") == "　　　　　　（月吉町経由�
 document.getElementById("hyouji51-1").style.color = '#ffff00'; //文字
 }
 
-
-
-
-
-
-
-
+   }
+  }
+};
+request10.send(null);
+   }
+  }
+};
+request9.send(null);
+   }
+  }
+};
+request8.send(null);
    }
   }
 };
