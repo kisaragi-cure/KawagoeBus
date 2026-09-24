@@ -1,0 +1,663 @@
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" content="noindex,noarchive,nofollow" />
+    <title>若葉駅発車時刻表</title>
+	<link rel="icon" >
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="refresh" content="15">
+
+<style type="text/css">
+
+body{
+	background-repeat: no-repeat;
+	background-image: url(tobubus.png);
+	background-size:1200px;
+	font-family:'BIZ UDゴシック','Arial',"Hiragino Sans",sans-serif;
+
+	zoom: 85%;
+	line-height: 17px;
+}
+
+textarea {
+width: 250px;
+height: 7em;
+}
+
+input[type="text"]:disabled {
+background-color: #ffffff;
+  color: inheri;
+  cursor: default;
+    font-size: 14pt;
+    width: 155px;
+}
+.asakusabutton{
+    width: 120px;
+    height: 2em;
+    padding: 7px;
+    font-size: 14pt;
+}
+
+
+</style>
+
+  </head>
+
+
+  <body>
+
+<!バージョン情報>
+
+
+<nobr>
+<div id="01" style="position: absolute; top: 20px; left:10px; color:#ffffff; font-size:24pt; ">若葉駅発車時刻表</div>
+
+<div style="position: absolute; top: 600px; left:330px;  color:#ffffff; font-size:8pt"><p>本Webアプリが利用する公共交通データは、公共交通オープンデータセンターにおいて提供されるものです。交通事業者により提供されたデータを元に</p></div>
+<div style="position: absolute; top: 615px; left:330px;  color:#ffffff; font-size:8pt"><p>していますが、必ずしも正確・完全なものとは限りません。本Webアプリの表示内容について、交通事業者への直接の問合せは行わないでください。</p></div>
+
+<div style="position: absolute; top: 635px; left:700px; color:#ffffff;  font-size:10pt"><p>本Webアプリに関するお問い合わせ先(X)@cure_kisaragi</p></div>
+
+
+<div id="ty99d" style="position: absolute; top: -50px; left:-50px; font-size:18pt"　><input type="text"  id = "ty99" disabled / name="address" size="100" value="試験"　></div>
+
+<div id="hanrei0" style="position: absolute; top:80px; left:30px; color:#ffffff; font-size:20pt" >系統</div>
+<div id="hanrei1" style="position: absolute; top:80px; left:130px; color:#ffffff; font-size:20pt" >行先・経由</div>
+<div id="hanrei2" style="position: absolute; top:80px; left:770px; color:#ffffff; font-size:20pt" >発車予定時刻</div>
+<div id="hanrei3" style="position: absolute; top:80px; left:950px; color:#ffffff; font-size:20pt" >のりば</div>
+
+
+
+<div id="hyouji10-1" style="position: absolute; top:130px; left:35px; color:#ffffff; font-size:20pt" ></div>
+<div id="hyouji10" style="position: absolute; top:165px; left:40px; color:#ffffff; font-size:32pt" ></div>
+<div id="hyouji11-1" style="position: absolute; top:150px; left:180px; color:#ffffff; font-size:22pt"></div>
+<div id="hyouji11" style="position: absolute; top:145px; left:130px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji12" style="position: absolute; top:150px; left:780px; color:#000000; font-size:40pt" ></div>
+<div id="hyouji13" style="position: absolute; top:150px; left:965px; color:#ffffff; font-size:36pt" ></div>
+
+<div id="hyouji20-1" style="position: absolute; top:230px; left:35px; color:#ffffff; font-size:20pt" ></div>
+<div id="hyouji20" style="position: absolute; top:265px; left:40px; color:#ffffff; font-size:32pt" ></div>
+<div id="hyouji21-1" style="position: absolute; top:250px; left:180px; color:#ffffff; font-size:22pt" ></div>
+<div id="hyouji21" style="position: absolute; top:245px; left:130px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji22" style="position: absolute; top:250px; left:780px; color:#000000; font-size:40pt" ></div>
+<div id="hyouji23" style="position: absolute; top:250px; left:965px; color:#ffffff; font-size:36pt" ></div>
+
+<div id="hyouji30-1" style="position: absolute; top:330px; left:35px; color:#ffffff; font-size:20pt" ></div>
+<div id="hyouji30" style="position: absolute; top:365px; left:40px; color:#ffffff; font-size:32pt" ></div>
+<div id="hyouji31-1" style="position: absolute; top:350px; left:180px; color:#ffffff; font-size:22pt"></div>
+<div id="hyouji31" style="position: absolute; top:345px; left:130px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji32" style="position: absolute; top:350px; left:780px; color:#000000; font-size:40pt" ></div>
+<div id="hyouji33" style="position: absolute; top:350px; left:965px; color:#ffffff; font-size:36pt" ></div>
+
+<div id="hyouji40-1" style="position: absolute; top:430px; left:35px; color:#ffffff; font-size:20pt" ></div>
+<div id="hyouji40" style="position: absolute; top:465px; left:40px; color:#ffffff; font-size:32pt" ></div>
+<div id="hyouji41-1" style="position: absolute; top:450px; left:180px; color:#ffffff; font-size:22pt" ></div>
+<div id="hyouji41" style="position: absolute; top:445px; left:130px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji42" style="position: absolute; top:450px; left:780px; color:#000000; font-size:40pt" ></div>
+<div id="hyouji43" style="position: absolute; top:450px; left:965px; color:#ffffff; font-size:36pt" ></div>
+
+<div id="hyouji50-1" style="position: absolute; top:530px; left:35px; color:#ffffff; font-size:20pt" ></div>
+<div id="hyouji50" style="position: absolute; top:565px; left:40px; color:#ffffff; font-size:32pt" ></div>
+<div id="hyouji51-1" style="position: absolute; top:550px; left:180px; color:#ffffff; font-size:22pt" ></div>
+<div id="hyouji51" style="position: absolute; top:545px; left:130px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji52" style="position: absolute; top:550px; left:780px; color:#000000; font-size:40pt" ></div>
+<div id="hyouji53" style="position: absolute; top:550px; left:965px; color:#ffffff; font-size:36pt" ></div>
+
+</nobr>
+</font>
+
+<script type="module" >
+
+	let now = new Date();
+      	let hour = now.getHours();
+      	let minutes = now.getMinutes();
+if ( minutes < 10 ){
+minutes = '0' + minutes; 
+}
+	let ima = '' + hour +  minutes ;
+console.log( ima );
+
+var day = '1' //曜日
+
+
+sessionStorage.setItem("kgbs10","");
+sessionStorage.setItem("kgbs10-1","");
+sessionStorage.setItem("kgbs11","");
+sessionStorage.setItem("kgbs11-1","");
+sessionStorage.setItem("kgbs12","99:99");
+sessionStorage.setItem("kgbs13","");
+sessionStorage.setItem("kgbs20","");
+sessionStorage.setItem("kgbs20-1","");
+sessionStorage.setItem("kgbs21","");
+sessionStorage.setItem("kgbs21-1","");
+sessionStorage.setItem("kgbs22","99:99");
+sessionStorage.setItem("kgbs23","");
+sessionStorage.setItem("kgbs30","");
+sessionStorage.setItem("kgbs30-1","");
+sessionStorage.setItem("kgbs31","");
+sessionStorage.setItem("kgbs31-1","");
+sessionStorage.setItem("kgbs32","99:99");
+sessionStorage.setItem("kgbs33","");
+sessionStorage.setItem("kgbs40","");
+sessionStorage.setItem("kgbs40-1","");
+sessionStorage.setItem("kgbs41","");
+sessionStorage.setItem("kgbs41-1","");
+sessionStorage.setItem("kgbs42","99:99");
+sessionStorage.setItem("kgbs43","");
+sessionStorage.setItem("kgbs50","");
+sessionStorage.setItem("kgbs50-1","");
+sessionStorage.setItem("kgbs51","");
+sessionStorage.setItem("kgbs51-1","");
+sessionStorage.setItem("kgbs52","99:99");
+sessionStorage.setItem("kgbs53","");
+
+
+var request1 = new XMLHttpRequest();
+//若01八幡団地
+request1.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=若０１&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request1.responseType = "text";
+
+request1.onload = () => {
+  if (request1.readyState === request1.DONE) {
+    if (request1.status === 200) {
+var data0 = request1.responseText;
+var data0 = request1.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"若葉駅:05200:02"' ){
+			if ( hatsu.replace(":","") >= ima ){
+		
+		var ikisaki = "八幡団地"
+		var keiyu = "　　　　　（塚越経由）"
+		var keito1 = "&nbsp;" + "&nbsp;" + "若"
+		var keito2 = "01"
+		var noriba = "２"
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",sessionStorage.getItem("kgbs10"));
+				sessionStorage.setItem("kgbs20-1",sessionStorage.getItem("kgbs10-1"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs23",sessionStorage.getItem("kgbs13"));
+				sessionStorage.setItem("kgbs10",keito2);
+				sessionStorage.setItem("kgbs10-1",keito1);
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				sessionStorage.setItem("kgbs13",noriba);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",keito2);
+				sessionStorage.setItem("kgbs20-1",keito1);
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				sessionStorage.setItem("kgbs23",noriba);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",keito2);
+				sessionStorage.setItem("kgbs30-1",keito1);
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				sessionStorage.setItem("kgbs33",noriba);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",keito2);
+				sessionStorage.setItem("kgbs40-1",keito1);
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				sessionStorage.setItem("kgbs43",noriba);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",keito2);
+				sessionStorage.setItem("kgbs50-1",keito1);
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				sessionStorage.setItem("kgbs53",noriba);
+				}
+
+			}
+		}
+	}
+}
+
+
+var request2 = new XMLHttpRequest();
+//若02川越
+request2.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=若０２&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request2.responseType = "text";
+
+request2.onload = () => {
+  if (request2.readyState === request2.DONE) {
+    if (request2.status === 200) {
+var data0 = request2.responseText;
+var data0 = request2.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"若葉駅:05200:01"' ){
+			if ( hatsu.replace(":","") >= ima ){
+				
+				console.log(JSON.stringify(data[n].odptnote).substring(0,15) )
+
+		if ( JSON.stringify(data[n].odptnote).substring(0,15) == '"若０２:若葉駅→東坂戸→川越' ){
+		var ikisaki = "川越駅"
+		var keiyu = "　　　　（東坂戸団地・なぐわし公園経由）"
+		} else {
+		var ikisaki = "川越駅"
+		var keiyu = "　　　　（東坂戸団地・なぐわし公園経由）"
+		}
+
+				var keito1 = "&nbsp;" + "&nbsp;" + "若"
+		var keito2 = "02"
+		var noriba = "１"
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",sessionStorage.getItem("kgbs10"));
+				sessionStorage.setItem("kgbs20-1",sessionStorage.getItem("kgbs10-1"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs23",sessionStorage.getItem("kgbs13"));
+				sessionStorage.setItem("kgbs10",keito2);
+				sessionStorage.setItem("kgbs10-1",keito1);
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				sessionStorage.setItem("kgbs13",noriba);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",keito2);
+				sessionStorage.setItem("kgbs20-1",keito1);
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				sessionStorage.setItem("kgbs23",noriba);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",keito2);
+				sessionStorage.setItem("kgbs30-1",keito1);
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				sessionStorage.setItem("kgbs33",noriba);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",keito2);
+				sessionStorage.setItem("kgbs40-1",keito1);
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				sessionStorage.setItem("kgbs43",noriba);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",keito2);
+				sessionStorage.setItem("kgbs50-1",keito1);
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				sessionStorage.setItem("kgbs53",noriba);
+				}
+
+
+
+			}
+		}
+	}
+}
+
+
+
+var request3 = new XMLHttpRequest();
+//東坂03団地
+request3.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=東坂０３&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request3.responseType = "text";
+
+request3.onload = () => {
+  if (request3.readyState === request3.DONE) {
+    if (request3.status === 200) {
+var data0 = request3.responseText;
+var data0 = request3.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"若葉駅:05200:01"' ){
+			if ( hatsu.replace(":","") >= ima ){
+				
+				console.log(JSON.stringify(data[n].odptnote).substring(0,15) )
+
+		if ( JSON.stringify(data[n].odptnote).substring(0,15) == '"東坂０３:若葉駅→東坂戸団地'){
+		var ikisaki = "東坂戸団地"
+		var keiyu = "　　　　　　（坂戸車庫経由）"
+		} else {
+		var ikisaki = "坂戸車庫"
+		var keiyu = ""
+		}
+
+
+		var keito1 = "東坂"
+		var keito2 = "03"
+		var noriba = "１"
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",sessionStorage.getItem("kgbs10"));
+				sessionStorage.setItem("kgbs20-1",sessionStorage.getItem("kgbs10-1"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs23",sessionStorage.getItem("kgbs13"));
+				sessionStorage.setItem("kgbs10",keito2);
+				sessionStorage.setItem("kgbs10-1",keito1);
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				sessionStorage.setItem("kgbs13",noriba);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",sessionStorage.getItem("kgbs20"));
+				sessionStorage.setItem("kgbs30-1",sessionStorage.getItem("kgbs20-1"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs33",sessionStorage.getItem("kgbs23"));
+				sessionStorage.setItem("kgbs20",keito2);
+				sessionStorage.setItem("kgbs20-1",keito1);
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				sessionStorage.setItem("kgbs23",noriba);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",sessionStorage.getItem("kgbs30"));
+				sessionStorage.setItem("kgbs40-1",sessionStorage.getItem("kgbs30-1"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs43",sessionStorage.getItem("kgbs33"));
+				sessionStorage.setItem("kgbs30",keito2);
+				sessionStorage.setItem("kgbs30-1",keito1);
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				sessionStorage.setItem("kgbs33",noriba);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",sessionStorage.getItem("kgbs40"));
+				sessionStorage.setItem("kgbs50-1",sessionStorage.getItem("kgbs40-1"));
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs53",sessionStorage.getItem("kgbs43"));
+				sessionStorage.setItem("kgbs40",keito2);
+				sessionStorage.setItem("kgbs40-1",keito1);
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				sessionStorage.setItem("kgbs43",noriba);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs50",keito2);
+				sessionStorage.setItem("kgbs50-1",keito1);
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				sessionStorage.setItem("kgbs53",noriba);
+				}
+
+
+
+			}
+		}
+	}
+}
+
+document.getElementById("hyouji10").innerHTML= sessionStorage.getItem("kgbs10");
+document.getElementById("hyouji10-1").innerHTML= sessionStorage.getItem("kgbs10-1");
+document.getElementById("hyouji11").innerHTML= sessionStorage.getItem("kgbs11");
+document.getElementById("hyouji11-1").innerHTML= sessionStorage.getItem("kgbs11-1");
+document.getElementById("hyouji12").innerHTML= sessionStorage.getItem("kgbs12");
+document.getElementById("hyouji13").innerHTML= sessionStorage.getItem("kgbs13");
+if( sessionStorage.getItem("kgbs11-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji11-1").style.color = '#ffff00'; //文字
+}
+document.getElementById("hyouji20").innerHTML= sessionStorage.getItem("kgbs20");
+document.getElementById("hyouji20-1").innerHTML= sessionStorage.getItem("kgbs20-1");
+document.getElementById("hyouji21").innerHTML= sessionStorage.getItem("kgbs21");
+document.getElementById("hyouji21-1").innerHTML= sessionStorage.getItem("kgbs21-1");
+document.getElementById("hyouji22").innerHTML= sessionStorage.getItem("kgbs22");
+document.getElementById("hyouji23").innerHTML= sessionStorage.getItem("kgbs23");
+if( sessionStorage.getItem("kgbs21-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji21-1").style.color = '#ffff00'; //文字
+}
+document.getElementById("hyouji30").innerHTML= sessionStorage.getItem("kgbs30");
+document.getElementById("hyouji30-1").innerHTML= sessionStorage.getItem("kgbs30-1");
+document.getElementById("hyouji31").innerHTML= sessionStorage.getItem("kgbs31");
+document.getElementById("hyouji31-1").innerHTML= sessionStorage.getItem("kgbs31-1");
+document.getElementById("hyouji32").innerHTML= sessionStorage.getItem("kgbs32");
+document.getElementById("hyouji33").innerHTML= sessionStorage.getItem("kgbs33");
+if( sessionStorage.getItem("kgbs31-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji31-1").style.color = '#ffff00'; //文字
+}
+document.getElementById("hyouji40").innerHTML= sessionStorage.getItem("kgbs40");
+document.getElementById("hyouji40-1").innerHTML= sessionStorage.getItem("kgbs40-1");
+document.getElementById("hyouji41").innerHTML= sessionStorage.getItem("kgbs41");
+document.getElementById("hyouji41-1").innerHTML= sessionStorage.getItem("kgbs41-1");
+document.getElementById("hyouji42").innerHTML= sessionStorage.getItem("kgbs42");
+document.getElementById("hyouji43").innerHTML= sessionStorage.getItem("kgbs43");
+if( sessionStorage.getItem("kgbs41-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji41-1").style.color = '#ffff00'; //文字
+}
+document.getElementById("hyouji50").innerHTML= sessionStorage.getItem("kgbs50");
+document.getElementById("hyouji50-1").innerHTML= sessionStorage.getItem("kgbs50-1");
+document.getElementById("hyouji51").innerHTML= sessionStorage.getItem("kgbs51");
+document.getElementById("hyouji51-1").innerHTML= sessionStorage.getItem("kgbs51-1");
+document.getElementById("hyouji52").innerHTML= sessionStorage.getItem("kgbs52");
+document.getElementById("hyouji53").innerHTML= sessionStorage.getItem("kgbs53");
+if( sessionStorage.getItem("kgbs51-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji51-1").style.color = '#ffff00'; //文字
+}
+
+   }
+  }
+};
+request3.send(null);
+   }
+  }
+};
+request2.send(null);
+   }
+  }
+};
+request1.send(null);
+
+</script>
+
+
+  </body>
+</html>
