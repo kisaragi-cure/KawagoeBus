@@ -1,1 +1,693 @@
-ページを表示できません。
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" content="noindex,noarchive,nofollow" />
+    <title>川越駅東口発車時刻表</title>
+	<link rel="icon" >
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="refresh" content="15">
+
+<style type="text/css">
+
+body{
+	background-repeat: no-repeat;
+	background-image: url(tobubus.png);
+	background-size:1200px;
+	font-family:'BIZ UDゴシック','Arial',"Hiragino Sans",sans-serif;
+
+	zoom: 85%;
+	line-height: 17px;
+}
+
+textarea {
+width: 250px;
+height: 7em;
+}
+
+input[type="text"]:disabled {
+background-color: #ffffff;
+  color: inheri;
+  cursor: default;
+    font-size: 14pt;
+    width: 155px;
+}
+.asakusabutton{
+    width: 120px;
+    height: 2em;
+    padding: 7px;
+    font-size: 14pt;
+}
+
+
+</style>
+
+  </head>
+
+
+  <body>
+
+<!バージョン情報>
+
+
+<nobr>
+<div id="01" style="position: absolute; top: 20px; left:10px; color:#ffffff; font-size:24pt; ">川越駅東口発車時刻表</div>
+<div style="position: absolute; top: 0px; left:600px; color:#ffffff;  font-size:10pt"><p>本Webアプリにについて交通事業者への問い合わせは行わないでください。</p></div>
+<div style="position: absolute; top: 15px; left:600px; color:#ffffff;  font-size:10pt"><p>本Webアプリに関するお問い合わせ先(X)@cure_kisaragi</p></div>
+
+
+<div id="ty99d" style="position: absolute; top: -50px; left:-50px; font-size:18pt"　><input type="text"  id = "ty99" disabled / name="address" size="100" value="試験"　></div>
+<div id="hanrei0" style="position: absolute; top:80px; left:110px; color:#ffffff; font-size:20pt" >行先・経由</div>
+<div id="hanrei1" style="position: absolute; top:80px; left:20px; color:#ffffff; font-size:20pt" >系統</div>
+<div id="hanrei2" style="position: absolute; top:80px; left:770px; color:#ffffff; font-size:20pt" >発車予定時刻</div>
+
+
+<div id="hyouji11-1" style="position: absolute; top:150px; left:160px; color:#ffffff; font-size:22pt"></div>
+<div id="hyouji11" style="position: absolute; top:145px; left:110px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji12" style="position: absolute; top:150px; left:780px; color:#000000; font-size:40pt" ></div>
+
+<div id="hyouji21-1" style="position: absolute; top:250px; left:160px; color:#ffffff; font-size:22pt" ></div>
+<div id="hyouji21" style="position: absolute; top:245px; left:110px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji22" style="position: absolute; top:250px; left:780px; color:#000000; font-size:40pt" ></div>
+
+<div id="hyouji31-1" style="position: absolute; top:350px; left:160px; color:#ffffff; font-size:22pt"></div>
+<div id="hyouji31" style="position: absolute; top:345px; left:110px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji32" style="position: absolute; top:350px; left:780px; color:#000000; font-size:40pt" ></div>
+
+<div id="hyouji41-1" style="position: absolute; top:450px; left:160px; color:#ffffff; font-size:22pt" ></div>
+<div id="hyouji41" style="position: absolute; top:445px; left:110px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji42" style="position: absolute; top:450px; left:780px; color:#000000; font-size:40pt" ></div>
+
+<div id="hyouji51-1" style="position: absolute; top:550px; left:160px; color:#ffffff; font-size:22pt" ></div>
+<div id="hyouji51" style="position: absolute; top:545px; left:110px; color:#ffffff; font-size:36pt" ></div>
+<div id="hyouji52" style="position: absolute; top:550px; left:780px; color:#000000; font-size:40pt" ></div>
+
+
+
+
+
+
+</nobr>
+</font>
+
+<script type="module" >
+
+	let now = new Date();
+      	let hour = now.getHours();
+      	let minutes = now.getMinutes();
+if ( minutes < 10 ){
+minutes = '0' + minutes; 
+}
+	let ima = '' + hour +  minutes ;
+console.log( ima );
+
+var day = '1' //曜日
+
+
+sessionStorage.setItem("kgbs11","");
+sessionStorage.setItem("kgbs11-1","");
+sessionStorage.setItem("kgbs12","99:99");
+sessionStorage.setItem("kgbs21","");
+sessionStorage.setItem("kgbs21-1","");
+sessionStorage.setItem("kgbs22","99:99");
+sessionStorage.setItem("kgbs31","");
+sessionStorage.setItem("kgbs31-1","");
+sessionStorage.setItem("kgbs32","99:99");
+sessionStorage.setItem("kgbs41","");
+sessionStorage.setItem("kgbs41-1","");
+sessionStorage.setItem("kgbs42","99:99");
+sessionStorage.setItem("kgbs51","");
+sessionStorage.setItem("kgbs51-1","");
+sessionStorage.setItem("kgbs52","99:99");
+
+
+var request1 = new XMLHttpRequest();
+//川越01神明町
+request1.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=川越０１&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request1.responseType = "text";
+
+request1.onload = () => {
+  if (request1.readyState === request1.DONE) {
+    if (request1.status === 200) {
+var data0 = request1.responseText;
+var data0 = request1.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:01"' ){
+			if ( hatsu.replace(":","") >= ima ){
+		
+		var ikisaki = "神明町車庫"
+		var keiyu = "　　　　　　（蔵のまち経由）"
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				}
+
+			}
+		}
+	}
+}
+
+
+var request2 = new XMLHttpRequest();
+//川越02八幡松山
+request2.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=川越０２&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request2.responseType = "text";
+
+request2.onload = () => {
+  if (request2.readyState === request2.DONE) {
+    if (request2.status === 200) {
+var data0 = request2.responseText;
+var data0 = request2.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:02"' ){
+			if ( hatsu.replace(":","") >= ima ){
+				
+		if ( JSON.stringify(data[n].odptnote).substring(0,19) == '"川越０２:川越駅→伊草小学校前→八幡'){
+		var ikisaki = "八幡団地"
+		} else {
+		var ikisaki = "東松山駅"
+		}
+		var keiyu = "　　　　　（蔵のまち経由）"
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				}
+
+			}
+		}
+	}
+}
+
+
+
+var request3 = new XMLHttpRequest();
+//川越03鴻巣
+request3.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=川越０３&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request3.responseType = "text";
+
+request3.onload = () => {
+  if (request3.readyState === request3.DONE) {
+    if (request3.status === 200) {
+var data0 = request3.responseText;
+var data0 = request3.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:04"' ){
+			if ( hatsu.replace(":","") >= ima ){
+				
+		if ( JSON.stringify(data[n].odptnote).substring(0,19) == '"川越０３:川越駅→伊草小学校前→鴻巣'){
+		var ikisaki = "鴻巣駅西口"
+		var keiyu = "　　　　　　（蔵のまち経由）"
+		} else if ( JSON.stringify(data[n].odptnote).substring(0,19) == '"川越０３:川越駅→鴻巣駅東口→鴻巣免'){
+		var ikisaki = "鴻巣免許センター"
+		var keiyu = "　　　　　　　　　　（蔵のまち経由）"
+		} else {
+		var ikisaki = "新荒子"
+		var keiyu = "　　　　（蔵のまち経由）"
+		}
+
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				}
+
+			}
+		}
+	}
+}
+
+
+var request4 = new XMLHttpRequest();
+//川越04桶川
+request4.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=川越０４&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request4.responseType = "text";
+
+request4.onload = () => {
+  if (request4.readyState === request4.DONE) {
+    if (request4.status === 200) {
+var data0 = request4.responseText;
+var data0 = request4.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:05"' ){
+			if ( hatsu.replace(":","") >= ima ){
+				
+		if ( '"川越０４:川越駅→山ヶ谷戸→桶川駅:'){
+		var ikisaki = "桶川駅西口"
+		var keiyu = "　　　　　　（蔵のまち経由）"
+		} else {
+		var ikisaki = "山ケ谷戸"
+		var keiyu = "　　　　　（蔵のまち経由）"
+		}
+
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				}
+
+			}
+		}
+	}
+}
+
+
+
+var request5 = new XMLHttpRequest();
+//川越05月吉
+request5.open("GET", "https://api-challenge.odpt.org/api/v4/odpt:BusTimetable?odpt:operator=odpt.Operator:TobuBus&dc:title=川越０５&acl:consumerKey=wizrymexdtbv1gh681zdmx5twvcfnanpmwoc5qu6iuzwunny8c4v0c5q4c1hm7r0", true);
+request5.responseType = "text";
+
+request5.onload = () => {
+  if (request5.readyState === request5.DONE) {
+    if (request5.status === 200) {
+var data0 = request5.responseText;
+var data0 = request5.responseText.replaceAll("dc:","dc");
+var data = JSON.parse(data0.replaceAll("odpt:","odpt"));
+
+
+      let len = '';
+      let n = 1;
+
+len = JSON.stringify(data.length) ;
+
+for ( n = 0; n < len; n++) {
+
+if (day == 1){ //平日
+var calendar = '"odpt.Calendar:Weekday"';
+}
+	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+
+		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:04"' ){
+			if ( hatsu.replace(":","") >= ima ){
+		
+		
+		var ikisaki = "神明町車庫"
+		var keiyu = "　　　　　　（月吉町経由）"
+
+				if (sessionStorage.getItem("kgbs12").replace(":","") > hatsu.replace(":","")){
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",sessionStorage.getItem("kgbs11"));
+				sessionStorage.setItem("kgbs21-1",sessionStorage.getItem("kgbs11-1"));
+				sessionStorage.setItem("kgbs22",sessionStorage.getItem("kgbs12"));
+				sessionStorage.setItem("kgbs11",ikisaki);
+				sessionStorage.setItem("kgbs11-1",keiyu);
+				sessionStorage.setItem("kgbs12",hatsu);
+				} else if (sessionStorage.getItem("kgbs22").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",sessionStorage.getItem("kgbs21"));
+				sessionStorage.setItem("kgbs31-1",sessionStorage.getItem("kgbs21-1"));
+				sessionStorage.setItem("kgbs32",sessionStorage.getItem("kgbs22"));
+				sessionStorage.setItem("kgbs21",ikisaki);
+				sessionStorage.setItem("kgbs21-1",keiyu);
+				sessionStorage.setItem("kgbs22",hatsu);
+				} else if (sessionStorage.getItem("kgbs32").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",sessionStorage.getItem("kgbs31"));
+				sessionStorage.setItem("kgbs41-1",sessionStorage.getItem("kgbs31-1"));
+				sessionStorage.setItem("kgbs42",sessionStorage.getItem("kgbs32"));
+				sessionStorage.setItem("kgbs31",ikisaki);
+				sessionStorage.setItem("kgbs31-1",keiyu);
+				sessionStorage.setItem("kgbs32",hatsu);
+				} else if (sessionStorage.getItem("kgbs42").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",sessionStorage.getItem("kgbs41"));
+				sessionStorage.setItem("kgbs51-1",sessionStorage.getItem("kgbs41-1"));
+				sessionStorage.setItem("kgbs52",sessionStorage.getItem("kgbs42"));
+				sessionStorage.setItem("kgbs41",ikisaki);
+				sessionStorage.setItem("kgbs41-1",keiyu);
+				sessionStorage.setItem("kgbs42",hatsu);
+				} else if (sessionStorage.getItem("kgbs52").replace(":","") > hatsu.replace(":","")){
+
+				sessionStorage.setItem("kgbs51",ikisaki);
+				sessionStorage.setItem("kgbs51-1",keiyu);
+				sessionStorage.setItem("kgbs52",hatsu);
+				}
+
+			}
+		}
+	}
+}
+
+
+
+document.getElementById("hyouji11").innerHTML= sessionStorage.getItem("kgbs11");
+document.getElementById("hyouji11-1").innerHTML= sessionStorage.getItem("kgbs11-1");
+document.getElementById("hyouji12").innerHTML= sessionStorage.getItem("kgbs12");
+if( sessionStorage.getItem("kgbs11-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji11-1").style.color = '#ffff00'; //文字
+}
+
+document.getElementById("hyouji21").innerHTML= sessionStorage.getItem("kgbs21");
+document.getElementById("hyouji21-1").innerHTML= sessionStorage.getItem("kgbs21-1");
+document.getElementById("hyouji22").innerHTML= sessionStorage.getItem("kgbs22");
+if( sessionStorage.getItem("kgbs21-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji21-1").style.color = '#ffff00'; //文字
+}
+
+document.getElementById("hyouji31").innerHTML= sessionStorage.getItem("kgbs31");
+document.getElementById("hyouji31-1").innerHTML= sessionStorage.getItem("kgbs31-1");
+document.getElementById("hyouji32").innerHTML= sessionStorage.getItem("kgbs32");
+if( sessionStorage.getItem("kgbs31-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji31-1").style.color = '#ffff00'; //文字
+}
+
+document.getElementById("hyouji41").innerHTML= sessionStorage.getItem("kgbs41");
+document.getElementById("hyouji41-1").innerHTML= sessionStorage.getItem("kgbs41-1");
+document.getElementById("hyouji42").innerHTML= sessionStorage.getItem("kgbs42");
+if( sessionStorage.getItem("kgbs41-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji41-1").style.color = '#ffff00'; //文字
+}
+
+document.getElementById("hyouji51").innerHTML= sessionStorage.getItem("kgbs51");
+document.getElementById("hyouji51-1").innerHTML= sessionStorage.getItem("kgbs51-1");
+document.getElementById("hyouji52").innerHTML= sessionStorage.getItem("kgbs52");
+if( sessionStorage.getItem("kgbs51-1") == "　　　　　　（月吉町経由）"){
+document.getElementById("hyouji51-1").style.color = '#ffff00'; //文字
+}
+
+
+
+
+
+
+
+
+   }
+  }
+};
+request5.send(null);
+
+
+
+
+   }
+  }
+};
+request4.send(null);
+
+
+
+
+   }
+  }
+};
+request3.send(null);
+
+
+
+   }
+  }
+};
+request2.send(null);
+
+
+   }
+  }
+};
+request1.send(null);
+
+</script>
+
+
+  </body>
+</html>
