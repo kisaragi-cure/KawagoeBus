@@ -52,10 +52,10 @@ background-color: #ffffff;
 <nobr>
 <div id="01" style="position: absolute; top: 20px; left:10px; color:#ffffff; font-size:24pt; ">川越駅東口発車時刻表</div>
 
-<div style="position: absolute; top: 600px; left:450px;  color:#ffffff; font-size:8pt"><p>本Webアプリが利用する公共交通データは、公共交通オープンデータセンターにおいて提供されるものです。交通事業者により提供されたデータを元に</p></div>
-<div style="position: absolute; top: 615px; left:450px;  color:#ffffff; font-size:8pt"><p>していますが、必ずしも正確・完全なものとは限りません。本Webアプリの表示内容について、交通事業者への直接の問合せは行わないでください。</p></div>
+<div style="position: absolute; top: 600px; left:330px;  color:#ffffff; font-size:8pt"><p>本Webアプリが利用する公共交通データは、公共交通オープンデータセンターにおいて提供されるものです。交通事業者により提供されたデータを元に</p></div>
+<div style="position: absolute; top: 615px; left:330px;  color:#ffffff; font-size:8pt"><p>していますが、必ずしも正確・完全なものとは限りません。本Webアプリの表示内容について、交通事業者への直接の問合せは行わないでください。</p></div>
 
-<div style="position: absolute; top: 635px; left:800px; color:#ffffff;  font-size:10pt"><p>本Webアプリに関するお問い合わせ先(X)@cure_kisaragi</p></div>
+<div style="position: absolute; top: 635px; left:700px; color:#ffffff;  font-size:10pt"><p>本Webアプリに関するお問い合わせ先(X)@cure_kisaragi</p></div>
 
 
 <div id="ty99d" style="position: absolute; top: -50px; left:-50px; font-size:18pt"　><input type="text"  id = "ty99" disabled / name="address" size="100" value="試験"　></div>
@@ -1506,7 +1506,7 @@ if (day == 1){ //平日
 var calendar = '"odpt.Calendar:Specific.SeibuBus.13.Weekday"';
 }
 	if (JSON.stringify(data[n].odptcalendar) == calendar ){
-		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
+		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[2].odptdepartureTime).replaceAll('"','');
 
 		if (JSON.stringify(data[n].odptbusTimetableObject[2].odptnote) == '"川越駅東口:130007:1"' ){
 			if ( hatsu.replace(":","") >= ima ){
