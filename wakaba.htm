@@ -65,6 +65,7 @@ background-color: #ffffff;
 <div id="hanrei2" style="position: absolute; top:80px; left:770px; color:#ffffff; font-size:20pt" >発車予定時刻</div>
 <div id="hanrei3" style="position: absolute; top:80px; left:950px; color:#ffffff; font-size:20pt" >のりば</div>
 
+<div style="position: absolute; top: 10px; left:900px; font-size:28pt"><input type="button" id = "dia" value="平日ダイヤ" class="asakusabutton"></div>
 
 
 <div id="hyouji10-1" style="position: absolute; top:130px; left:35px; color:#ffffff; font-size:20pt" ></div>
@@ -110,13 +111,13 @@ background-color: #ffffff;
 	let now = new Date();
       	let hour = now.getHours();
       	let minutes = now.getMinutes();
+      	let day = now.getDay();
+
 if ( minutes < 10 ){
 minutes = '0' + minutes; 
 }
 	let ima = '' + hour +  minutes ;
 console.log( ima );
-
-var day = '1' //曜日
 
 
 sessionStorage.setItem("kgbs10","");
@@ -170,14 +171,27 @@ len = JSON.stringify(data.length) ;
 
 for ( n = 0; n < len; n++) {
 
-if (day == 1){ //平日
+
+if (day > 0 && day < 6){ //平日
 var calendar = '"odpt.Calendar:Weekday"';
+dia.value = '平日ダイヤ';
 }
-	if (JSON.stringify(data[n].odptcalendar) == calendar ){
+if (day == 0){ //日曜日
+var calendar = '"odpt.Calendar:Holiday"';
+dia.value = '休日ダイヤ';
+dia.style.color = '#ff0000'; //文字
+
+}
+if (day == 6){ //土曜日
+var calendar = '"odpt.Calendar:Saturday"';
+dia.value = '土曜ダイヤ';
+dia.style.color = '#0000ff'; //文字
+
+}	if (JSON.stringify(data[n].odptcalendar) == calendar ){
 		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
 
 		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"若葉駅:05200:02"' ){
-			if ( hatsu.replace(":","") >= ima ){
+			if ( hatsu.replace(":","")*1 >= ima ){
 		
 		var ikisaki = "八幡団地"
 		var keiyu = "　　　　　（塚越経由）"
@@ -312,14 +326,20 @@ len = JSON.stringify(data.length) ;
 
 for ( n = 0; n < len; n++) {
 
-if (day == 1){ //平日
+if (day > 0 && day < 6){ //平日
 var calendar = '"odpt.Calendar:Weekday"';
+}
+if (day == 0){ //日曜日
+var calendar = '"odpt.Calendar:Holiday"';
+}
+if (day == 6){ //土曜日
+var calendar = '"odpt.Calendar:Saturday"';
 }
 	if (JSON.stringify(data[n].odptcalendar) == calendar ){
 		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
 
 		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"若葉駅:05200:01"' ){
-			if ( hatsu.replace(":","") >= ima ){
+			if ( hatsu.replace(":","")*1 >= ima ){
 				
 				console.log(JSON.stringify(data[n].odptnote).substring(0,15) )
 
@@ -465,14 +485,20 @@ len = JSON.stringify(data.length) ;
 
 for ( n = 0; n < len; n++) {
 
-if (day == 1){ //平日
+if (day > 0 && day < 6){ //平日
 var calendar = '"odpt.Calendar:Weekday"';
+}
+if (day == 0){ //日曜日
+var calendar = '"odpt.Calendar:Holiday"';
+}
+if (day == 6){ //土曜日
+var calendar = '"odpt.Calendar:Saturday"';
 }
 	if (JSON.stringify(data[n].odptcalendar) == calendar ){
 		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
 
 		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"若葉駅:05200:01"' ){
-			if ( hatsu.replace(":","") >= ima ){
+			if ( hatsu.replace(":","")*1 >= ima ){
 				
 				console.log(JSON.stringify(data[n].odptnote).substring(0,15) )
 
