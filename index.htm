@@ -506,7 +506,7 @@ var calendar = '"odpt.Calendar:Saturday"';
 		var keiyu = "　　　　　　　　　　　（蔵のまち経由）"
 		} else {
 		var ikisaki = "新荒子"
-		var keiyu = "　　　　（蔵のまち経由）"
+		var keiyu = "　　　（蔵のまち経由）"
 		}
 
 
@@ -658,8 +658,8 @@ var calendar = '"odpt.Calendar:Saturday"';
 			if ( hatsu.replace(":","")*1 >= ima ){
 				
 		if ( JSON.stringify(data[n].odptnote).substring(0,19) == '"川越０４:川越駅→山ヶ谷戸→桶川駅:'){
-		var ikisaki = "桶川駅西口"
-		var keiyu = "　　　　　　（蔵のまち経由）"
+		var ikisaki = "桶川駅"
+		var keiyu = "　　　（蔵のまち経由）"
 		} else {
 		var ikisaki = "山ケ谷戸"
 		var keiyu = "　　　　　（蔵のまち経由）"
@@ -1569,13 +1569,13 @@ len = JSON.stringify(data.length) ;
 for ( n = 0; n < len; n++) {
 
 if (day > 0 && day < 6){ //平日
-var calendar = '"odpt.Calendar:Weekday"';
+var calendar = '"odpt.Calendar:Specific.SeibuBus.13.Weekday"';
 }
 if (day == 0){ //日曜日
-var calendar = '"odpt.Calendar:Holiday"';
+var calendar = '"odpt.Calendar:Specific.SeibuBus.13.Holiday"';
 }
 if (day == 6){ //土曜日
-var calendar = '"odpt.Calendar:Saturday"';
+var calendar = '"odpt.Calendar:Specific.SeibuBus.13.Saturday"';
 }
 	if (JSON.stringify(data[n].odptcalendar) == calendar ){
 		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[2].odptdepartureTime).replaceAll('"','');
@@ -1699,8 +1699,21 @@ var calendar = '"odpt.Calendar:Saturday"';
 		}
 	}
 }
-
-
+if ( sessionStorage.getItem("kgbs12") == '99:99'){
+sessionStorage.setItem("kgbs12","");
+}
+if ( sessionStorage.getItem("kgbs22") == '99:99'){
+sessionStorage.setItem("kgbs22","");
+}
+if ( sessionStorage.getItem("kgbs32") == '99:99'){
+sessionStorage.setItem("kgbs32","");
+}
+if ( sessionStorage.getItem("kgbs42") == '99:99'){
+sessionStorage.setItem("kgbs42","");
+}
+if ( sessionStorage.getItem("kgbs52") == '99:99'){
+sessionStorage.setItem("kgbs52","");
+}
 document.getElementById("hyouji10").innerHTML= sessionStorage.getItem("kgbs10");
 document.getElementById("hyouji10-1").innerHTML= sessionStorage.getItem("kgbs10-1");
 document.getElementById("hyouji11").innerHTML= sessionStorage.getItem("kgbs11");
