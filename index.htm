@@ -197,6 +197,10 @@ dia.style.color = '#0000ff'; //文字
 		
 		var ikisaki = "神明町車庫"
 		var keiyu = "　　　　　　（蔵のまち経由）"
+//川越祭り設定
+if ( day == 0 || day == 6){
+		var keiyu = "　　　　　　（初雁球場・宮元町経由）"
+}
 		var keito1 = "川越"
 		var keito2 = "01"
 		var noriba = "１"
@@ -349,6 +353,11 @@ var calendar = '"odpt.Calendar:Saturday"';
 		var ikisaki = "東松山駅"
 		}
 		var keiyu = "　　　　　（蔵のまち経由）"
+//川越祭り設定
+if ( day == 0 || day == 6){
+		var keiyu = "　　　　　（初雁球場経由）"
+}
+
 				var keito1 = "川越"
 		var keito2 = "02"
 		var noriba = "２"
@@ -509,6 +518,11 @@ var calendar = '"odpt.Calendar:Saturday"';
 		var keiyu = "　　　（蔵のまち経由）"
 		}
 
+//川越祭り設定
+if ( day == 0 || day == 6){
+		var keiyu = "　　　　　  （初雁球場経由）"
+}
+
 
 		var keito1 = "川越"
 		var keito2 = "03"
@@ -666,6 +680,11 @@ var calendar = '"odpt.Calendar:Saturday"';
 		}
 
 
+//川越祭り設定
+if ( day == 0 || day == 6){
+		var keiyu = "　　　　　（初雁球場経由）"
+}
+
 				var keito1 = "川越"
 		var keito2 = "04"
 		var noriba = "５"
@@ -809,6 +828,9 @@ var calendar = '"odpt.Calendar:Saturday"';
 	if (JSON.stringify(data[n].odptcalendar) == calendar ){
 		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
 
+//川越祭り設定
+if ( day > 0 || day < 6){
+
 		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:04"' ){
 			if ( hatsu.replace(":","")*1 >= ima ){
 		
@@ -926,6 +948,8 @@ var calendar = '"odpt.Calendar:Saturday"';
 			}
 		}
 	}
+}
+
 }
 var request6 = new XMLHttpRequest();
 //川越06月吉
@@ -1134,6 +1158,11 @@ var calendar = '"odpt.Calendar:Saturday"';
 		var keiyu = "　　　（蔵のまち・なぐわし公園経由）"
 		}
 
+//川越祭り設定
+if ( day == 0 || day == 6){
+		var keiyu = "　　　（初雁球場・宮元町経由）"
+}
+
 
 				var keito1 = "&nbsp;" + "&nbsp;" + "若"
 		var keito2 = "02"
@@ -1278,6 +1307,9 @@ var calendar = '"odpt.Calendar:Saturday"';
 	if (JSON.stringify(data[n].odptcalendar) == calendar ){
 		var hatsu = JSON.stringify(data[n].odptbusTimetableObject[0].odptdepartureTime).replaceAll('"','');
 
+//川越祭り設定
+if ( day > 0 || day < 6){
+
 		if (JSON.stringify(data[n].odptbusTimetableObject[0].odptnote) == '"川越駅:05001:07"' ){
 			if ( hatsu.replace(":","")*1 >= ima ){
 				console.log(JSON.stringify(data[n].odptnote).substring(0,15) )
@@ -1394,7 +1426,9 @@ var calendar = '"odpt.Calendar:Saturday"';
 
 
 			}
-		}
+		
+}
+}
 	}
 }
 var request9 = new XMLHttpRequest();
